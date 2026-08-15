@@ -2265,22 +2265,12 @@ body::before { display: none !important; content: none !important; }
   .hero.page-hero .hero-copy h1 { font-size: clamp(45px, 13vw, 63px); }
   .hero.page-hero .hero-copy > p:not(.kicker) { font-size: 15px; }
   .history-hero, .organisation-hero { min-height: 432px !important; }
-  .history-hero .hero-copy, .organisation-hero .hero-copy { width: 100%; padding-bottom: 144px; }
+  .history-hero .hero-copy, .organisation-hero .hero-copy { width: 100%; padding-bottom: 42px; }
   .hero.page-hero.history-hero::before,
   .hero.page-hero.organisation-hero::before {
-    top: auto;
-    right: 0;
-    bottom: 120px;
-    left: 0;
-    display: block;
-    width: auto;
-    height: 5px;
-    background: #FFFDFC;
+    display: none;
   }
-  .history-crest-panel { top: auto; width: 100%; height: 120px; border: 0; }
-  .history-crest-panel::before,
-  .history-crest-panel::after { display: none; }
-  .history-crest-panel img { width: auto; height: 108px; max-height: calc(100% - 12px); }
+  .split-tone-hero .history-crest-panel { display: none; }
   .hero.page-hero.group-detail-hero { width: calc(100% - 32px); min-height: 540px; }
   .hero.page-hero.group-detail-hero .hero-copy {
     width: calc(100% - 88px);
