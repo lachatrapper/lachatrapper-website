@@ -2464,8 +2464,8 @@ body::before { display: none !important; content: none !important; }
   width: min(1390px, calc(100% - 50px));
   margin: 0 auto;
   padding: clamp(34px, 5vw, 70px);
-  border: 1px solid var(--line);
-  background: #FFFDFC;
+  border: 0;
+  background: transparent;
 }
 .lachatrapper-origin-heading { margin-bottom: 36px; }
 .lachatrapper-origin-heading .kicker { margin-bottom: 13px; }
