@@ -94,13 +94,13 @@
     const danceText = danceHeading?.closest(".two-column")?.querySelector(".text");
     if (danceText) danceText.innerHTML = `<p>Im Jahr 2000 wurde die Sportabteilung gegründet, in der sämtliche Gardetänzerinnen und Gardetänzer organisiert sind. Am 12.08.2000 trat die KG Lachatrapper dem Schwäbischen Turnerbund (STB) sowie dem Württembergischen Landessportbund (WLSB) bei.</p><p>Gardetanz ist Hochleistungssport und braucht eine fundierte Ausbildung des Trainerstabs. Unsere Trainerinnen und Trainer werden über den STB ausgebildet und besitzen die Trainerlizenz C. Im Jahr 2001 nahm der Verein erstmals an Turnieren teil.</p>`;
 
-    const originContext = content.querySelector(".two-column");
+    const originContext = [...content.querySelectorAll(".two-column")].find((section) => section.querySelector("h2")?.textContent.includes("Aus „Lacha“"));
     if (originContext && !content.querySelector(".lachatrapper-origin")) {
       const origin = document.createElement("section");
       origin.className = "lachatrapper-origin";
       origin.setAttribute("aria-labelledby", "lachatrapper-origin-title");
       origin.innerHTML = `<div class="lachatrapper-origin-heading"><p class="kicker">Der Lachatrapper</p><h2 id="lachatrapper-origin-title">Vom Hochwasser<br>zur <em>Vereinsfigur.</em></h2></div><div class="lachatrapper-origin-layout"><div class="lachatrapper-origin-story"><p>Wenn früher bei Schneeschmelze oder Gewittern der Ruf „D’r Hohlweg kommt“ zu hören war, wurde es in Dornstadt ernst: Vom heutigen Hallenbad aus drängte das Wasser durch Tomerdinger, Lange, Kreuz- und Hirschstraße weiter Richtung Tobeltal.</p><p>Überflutete Keller und ein zeitweise geteiltes Dorf gehörten zur Erinnerung vieler Familien. Für Kinder war es zugleich ein außergewöhnlicher Tag – Schule fiel aus, und mit Back- oder Brühtrog wurde über das Wasser gefahren.</p><p>Nach dem Ablaufen blieben unzählige Pfützen zurück: schwäbisch „Lacha“. Daraus wurde der Dornstadter Spitzname „Lachatrapper“ – auf Hochdeutsch: Pfützentreter. Mit der Ortskanalisation gehören diese Überschwemmungen heute der Vergangenheit an.</p></div></div><div class="lachatrapper-origin-details"><article><h3>Ein derber Alb-Bauer.</h3><p>Die Maskengruppe stellt den Lachatrapper als Alb-Bauern dar: grüner Hut, schwarzes Nackentuch, schwarze Hose und roter Kittel mit rot-grüner Borte. Zum Häs gehört auch der Saatsack.</p><p class="lachatrapper-mask-caption">Die Lachatrapper-Maske trägt die Geschichte Dornstadts weiter.</p></article><figure class="lachatrapper-mask-detail"><img src="assets/images/history/lachatrapper-maske-schwarz-transparent.png" alt="Freigestellte Maske des Dornstadter Lachatrappers"></figure></div>`;
-      originContext.insertAdjacentElement("afterend", origin);
+      originContext.replaceWith(origin);
     }
 
     content.dataset.historyEnriched = "true";
@@ -338,3 +338,4 @@
   updateGroups();
   addEventListener("hashchange", () => setTimeout(updateGroups, 10));
 })();
+
