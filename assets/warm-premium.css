@@ -2497,7 +2497,7 @@ body::before { display: none !important; content: none !important; }
   align-content: center;
   margin: 0;
   overflow: hidden;
-  background: #315E47;
+  background: #F7F4F2;
 }
 .lachatrapper-mask-detail img {
   display: block;
