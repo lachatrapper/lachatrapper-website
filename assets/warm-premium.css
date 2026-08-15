@@ -2558,30 +2558,28 @@ body::before { display: none !important; content: none !important; }
   #content > .instagram + .cta-band { margin-top: 32px; margin-bottom: 38px; padding-top: 34px; padding-bottom: 34px; }
 }
 
-/* Navigation: Der Einstieg zur Mitgliedschaft ist ein klarer Menüpunkt, nicht ein abgesetzter Fremdkörper. */
+/* Navigation: Dezenter roter Akzent statt voluminöser Schaltfläche. */
 .site-nav .nav-join {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
-  min-height: 39px;
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 253, 252, .42);
-  border-radius: 3px;
-  background: var(--red);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, .16);
+  min-height: 0;
+  padding: 8px 11px 8px 13px;
+  border: 0;
+  border-radius: 1px;
+  background: rgba(187, 37, 43, .92);
+  box-shadow: inset 3px 0 0 rgba(255, 253, 252, .78);
   color: #FFFDFC;
   line-height: 1;
   text-shadow: none;
 }
 .site-nav .nav-join:hover,
 .site-nav .nav-join:focus-visible {
-  border-color: #FFFDFC;
   background: var(--red-dark);
+  box-shadow: inset 3px 0 0 #FFFDFC;
   color: #FFFDFC;
   transform: translateY(-1px);
 }
-.site-nav .nav-join span { font-size: 17px; line-height: .8; }
 
 /* Bereits vor dem Überlaufen wird aus der Hauptnavigation ein echtes Hamburger-Menü. */
 @media (max-width: 1120px) {
@@ -2651,10 +2649,10 @@ body::before { display: none !important; content: none !important; }
   }
   .site-nav .nav-dropdown-panel a { padding: 10px 12px; font-size: 12px; }
   .site-nav .nav-join {
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-    margin-top: 7px;
-    padding: 13px 14px;
+    margin-top: 6px;
+    padding: 11px 12px 11px 15px;
   }
 }
 @media (max-width: 760px) {
