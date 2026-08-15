@@ -1,0 +1,5 @@
+/* Ruhigerer Einstieg: eine grüne Fläche, kompaktere Höhe, Wappen optisch zentriert. */
+.hero.red-green{min-height:480px;background:linear-gradient(90deg,var(--red) 0 58%,var(--green-dark) 58%)}.hero.red-green:before{display:none}.hero.red-green .hero-copy{padding-top:80px;padding-bottom:62px}.hero.red-green .hero-side{align-items:center;justify-content:center}.hero.red-green .hero-crest{top:50%;right:50%;height:min(345px,29vw);transform:translate(50%,-50%)}
+.fastlane-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){.hero.red-green{min-height:auto}.hero.red-green .hero-copy{padding-top:62px;padding-bottom:42px}.hero.red-green .hero-side{min-height:340px}.hero.red-green .hero-crest{top:50%;right:50%;height:275px;transform:translate(50%,-50%)}}
+@media(max-width:760px){.fastlane-grid{grid-template-columns:repeat(2,1fr)}.fastlane-card:last-child{grid-column:auto}}

@@ -1,0 +1,9 @@
+{
+  "name": "KG Lachatrapper Dornstadt 1972 e.V.",
+  "short_name": "Lachatrapper",
+  "lang": "de",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F7F4F2",
+  "theme_color": "#88081C"
+}
