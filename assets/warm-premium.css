@@ -2557,3 +2557,127 @@ body::before { display: none !important; content: none !important; }
   #content > .instagram .instagram-link { min-height: 260px; padding-top: 26px; padding-bottom: 26px; }
   #content > .instagram + .cta-band { margin-top: 32px; margin-bottom: 38px; padding-top: 34px; padding-bottom: 34px; }
 }
+
+/* Navigation: Der Einstieg zur Mitgliedschaft ist ein klarer Menüpunkt, nicht ein abgesetzter Fremdkörper. */
+.site-nav .nav-join {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 39px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 253, 252, .42);
+  border-radius: 3px;
+  background: var(--red);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, .16);
+  color: #FFFDFC;
+  line-height: 1;
+  text-shadow: none;
+}
+.site-nav .nav-join:hover,
+.site-nav .nav-join:focus-visible {
+  border-color: #FFFDFC;
+  background: var(--red-dark);
+  color: #FFFDFC;
+  transform: translateY(-1px);
+}
+.site-nav .nav-join span { font-size: 17px; line-height: .8; }
+
+/* Bereits vor dem Überlaufen wird aus der Hauptnavigation ein echtes Hamburger-Menü. */
+@media (max-width: 1120px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px;
+  }
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 253, 252, .45);
+    border-radius: 3px;
+    padding: 10px 12px;
+    background: rgba(22, 64, 47, .28);
+    color: #FFFDFC;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .045em;
+    cursor: pointer;
+  }
+  .menu-toggle:hover { background: rgba(255, 253, 252, .13); }
+  .menu-toggle-icon {
+    display: grid;
+    width: 16px;
+    gap: 3px;
+  }
+  .menu-toggle-icon i {
+    display: block;
+    width: 16px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  .menu-toggle.is-open .menu-toggle-icon i:first-child { transform: translateY(4.5px) rotate(45deg); }
+  .menu-toggle.is-open .menu-toggle-icon i:nth-child(2) { opacity: 0; }
+  .menu-toggle.is-open .menu-toggle-icon i:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+  .site-nav {
+    display: none;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 12px 0 10px;
+    border-top: 1px solid rgba(255, 253, 252, .28);
+    white-space: normal;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav > a,
+  .site-nav .nav-dropdown summary {
+    width: 100%;
+    padding: 11px 10px;
+    border-bottom: 0;
+    font-size: 14px;
+  }
+  .site-nav .nav-dropdown { display: block; width: 100%; }
+  .site-nav .nav-dropdown-panel {
+    position: static;
+    width: 100%;
+    margin: 2px 0 5px;
+    padding: 4px;
+    transform: none;
+    box-shadow: none;
+  }
+  .site-nav .nav-dropdown-panel a { padding: 10px 12px; font-size: 12px; }
+  .site-nav .nav-join {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 7px;
+    padding: 13px 14px;
+  }
+}
+@media (max-width: 760px) {
+  .site-header { gap: 12px; }
+  .menu-toggle { padding: 9px 10px; }
+  .menu-toggle-label { display: none; }
+  .site-nav > a,
+  .site-nav .nav-dropdown summary { padding: 10px 9px; font-size: 12px; }
+  .site-nav .nav-dropdown-panel a { padding: 9px 10px; font-size: 11px; }
+}
+
+/* Die Bildbühne bleibt lebendig, zeigt aber ohne Ken-Burns-Zoom mehr vom eigentlichen Foto. */
+.hero-slide-photo,
+.hero-slide.is-active .hero-slide-photo { transform: scale(1); }
+.group-detail-hero .group-hero-photo {
+  width: min(78%, 1080px);
+  object-fit: contain;
+  object-position: right center;
+}
+@media (max-width: 760px) {
+  .group-detail-hero .group-hero-photo {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
